@@ -7,6 +7,9 @@ use App\Slide;
 use App\Product;
 use App\ProductType;
 use App\Cart;
+use App\Customer;
+use App\Bill;
+use App\BillDetail;
 use Session;
 
 class PageController extends Controller
@@ -40,6 +43,7 @@ class PageController extends Controller
     public function getGioithieu(){
         return view('pages.gioi_thieu');
     }
+
     //them gio hang
     public function getAddtoCart(Request $req, $id){
         $product = Product::find($id);
@@ -49,6 +53,7 @@ class PageController extends Controller
         $req->session()->put('cart',$cart);
         return redirect()->back();
     }
+
     //xoa gio hang
     public function getDelitemCart($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -60,7 +65,46 @@ class PageController extends Controller
         else{
             Session::forget('cart');
         }
-        Session::put('cart', $cart);
         return redirect()->back();
+    }
+    
+    public function getDatHang(){
+        // $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        // $cart = new Cart($oldCart);
+        return view('pages.dathang');
+    }
+
+    //dat hang
+    public function postDatHang(Request $req){
+        $cart = Session::get('cart');
+
+        $customer = new Customer;
+        $customer->name = $req->name;
+        $customer->gender = $req->gender;
+        $customer->email = $req->email;
+        $customer->address = $req->address;
+        $customer->phone_number = $req->phone;
+        $customer->note = $req->note;
+        $customer->save();
+
+        $bill = new Bill;
+        $bill->id_customer = $customer->id;
+        $bill->date_order = date('Y-m-d');
+        $bill->total = $cart->totalPrice;
+        $bill->payment = $req->payment_method;
+        $bill->note = $req->note;
+        $bill->save();
+
+        foreach($cart['items'] as $key=>$value ){
+            $billDetail = new BillDetail;
+            $billDetail->id_bill = $bill->id;
+            $billDetail->id_product = $key;
+            $billDetail->quantity = $value['qty'];
+            $billDetail->unit_price = $value['price']/$value['qty'];
+            $billDetail->save();
+        }
+
+        Session::forget('cart');
+        return redirect()->back()->with('thongbao', 'Đặt hàng thành công!');
     }
 }

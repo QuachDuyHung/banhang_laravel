@@ -46,7 +46,7 @@
 							
 							@foreach($product_cart as $product)
 							<div class="cart-item">
-							<a href="{{route('xoagiohang',$product['item']['id'])}}" class="cart-item-delete"><i class="fa fa-times"></i></a>
+								<a href="{{route('xoagiohang',$product['item']['id'])}}" class="cart-item-delete"><i class="fa fa-times"></i></a>
 								<div class="media">
 									<a class="pull-left" href="#"><img src="resource/image/product/{{$product['item']['image']}}" alt=""></a>
 									<div class="media-body">
@@ -63,7 +63,7 @@
 
 								<div class="center">
 									<div class="space10">&nbsp;</div>
-									<a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+									<a href="{{route('dathang')}}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
 								</div>
 							</div>					
 

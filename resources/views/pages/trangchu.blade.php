@@ -102,12 +102,12 @@
                         <div class="single-item-body">
                             <p class="single-item-title">{{$sp->name}}</p>
                             <p class="single-item-price" style="font-size: 18px; margin-bottom: 10px;">
-                                <span class="flash-del">{{number_format($new->unit_price)}} đồng</span>
-                                <span class="flash-sale">{{number_format($new->promotion_price)}} đồng</span>
+                                <span class="flash-del">{{number_format($sp->unit_price)}} đồng</span>
+                                <span class="flash-sale">{{number_format($sp->promotion_price)}} đồng</span>
                             </p>
                         </div>
                         <div class="single-item-caption">
-                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
                             <a class="beta-btn primary" href="{{route('chitietsanpham',$sp->id)}}">Detail<i class="fa fa-chevron-right"></i></a>
                             <div class="clearfix"></div>
                         </div>

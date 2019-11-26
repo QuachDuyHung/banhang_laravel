@@ -35,6 +35,10 @@ Route::get('gioi-thieu',[
     'as'=>'gioithieu',
     'uses'=>'PageController@getGioithieu'
 ]);
+Route::get('dat-hang',[
+    'as'=>'dathang',
+    'uses'=>'PageController@getDatHang'
+]);
 
 //thêm vào giỏ hàng
 Route::get('add-to-cart/{id}',[
@@ -46,4 +50,10 @@ Route::get('add-to-cart/{id}',[
 Route::get('del-cart/{id}',[
     'as'=>'xoagiohang',
     'uses'=>'PageController@getDelitemCart'
+]);
+
+//dat hang
+Route::post('dat-hang',[
+    'as'=>'dathang',
+    'uses'=>'PageController@postDatHang'
 ]);
