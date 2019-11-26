@@ -35,10 +35,6 @@ Route::get('gioi-thieu',[
     'as'=>'gioithieu',
     'uses'=>'PageController@getGioithieu'
 ]);
-Route::get('dat-hang',[
-    'as'=>'dathang',
-    'uses'=>'PageController@getDatHang'
-]);
 
 //thêm vào giỏ hàng
 Route::get('add-to-cart/{id}',[
@@ -53,7 +49,43 @@ Route::get('del-cart/{id}',[
 ]);
 
 //dat hang
+Route::get('dat-hang',[
+    'as'=>'dathang',
+    'uses'=>'PageController@getDatHang'
+]);
 Route::post('dat-hang',[
     'as'=>'dathang',
     'uses'=>'PageController@postDatHang'
+]);
+
+//dang nhap
+Route::get('dang-nhap',[
+    'as'=>'dangnhap',
+    'uses'=>'PageController@getdangNhap'
+]);
+Route::post('dang-nhap',[
+    'as'=>'dangnhap',
+    'uses'=>'PageController@postdangNhap'
+]);
+
+//dang ky
+Route::get('dang-ky',[
+    'as'=>'dangky',
+    'uses'=>'PageController@getdangKy'
+]);
+Route::post('dang-ky',[
+    'as'=>'dangky',
+    'uses'=>'PageController@postdangKy'
+]);
+
+//dang xuat
+Route::get('dang-xuat',[
+    'as'=>'dangxuat',
+    'uses'=>'PageController@getdangXuat'
+]);
+
+//tim kiem
+Route::get('search',[
+    'as'=>'search',
+    'uses'=>'PageController@getSearch'
 ]);
