@@ -33,7 +33,7 @@
 				</div>
 
 				<div class="beta-comp">
-					@if(Session::has('cart'))
+					
 					<div class="cart">
 						<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (
 						@if(Session::has('cart'))
@@ -43,7 +43,8 @@
 						@endif
 						) <i class="fa fa-chevron-down"></i></div>
 						<div class="beta-dropdown cart-body">
-							
+						
+						@if(Session::has('cart'))						
 							@foreach($product_cart as $product)
 							<div class="cart-item">
 								<a href="{{route('xoagiohang',$product['item']['id'])}}" class="cart-item-delete"><i class="fa fa-times"></i></a>
@@ -56,9 +57,10 @@
 								</div>
 							</div>
 							@endforeach
+						@endif
 
 							<div class="cart-caption">
-								<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{number_format(Session('cart')->totalPrice)}}</span></div>
+								<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">@if(Session::has('cart')) {{number_format(Session('cart')->totalPrice)}} @else 0 @endif VNĐ</span></div>
 								<div class="clearfix"></div>
 
 								<div class="center">
@@ -66,10 +68,9 @@
 									<a href="{{route('dathang')}}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
 								</div>
 							</div>					
-
 						</div>
 					</div> <!-- .cart -->
-					@endif
+					
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -81,8 +82,8 @@
 			<div class="visible-xs clearfix"></div>
 			<nav class="main-menu">
 				<ul class="l-inline ov">
-				<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
-				<li><a href="#">Loại sản phẩm</a>
+					<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
+					<li><a href="#">Loại sản phẩm</a>
 						<ul class="sub-menu">
 
 							@foreach($loai_sp as $loai)

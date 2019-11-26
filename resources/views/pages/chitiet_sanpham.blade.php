@@ -56,7 +56,7 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                            <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -78,8 +78,8 @@
                 <div class="space50">&nbsp;</div>
                 <div class="beta-products-list">
                     <h4 style="margin-bottom: 20px;">Sản phẩm liên quan</h4>
-
                     <div class="row">
+
                         @foreach($sp_tuongtu as $sptt)
                         <div class="col-sm-4" style="margin-bottom: 40px;">
                             <div class="single-item">
@@ -103,7 +103,7 @@
                                     </p>
                                 </div>
                                 <div class="single-item-caption">
-                                    <a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="add-to-cart pull-left" href="{{route('themgiohang',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                     <a class="beta-btn primary" href="{{route('chitietsanpham',$sptt->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                     <div class="clearfix"></div>
                                 </div>

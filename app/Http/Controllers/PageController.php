@@ -95,7 +95,7 @@ class PageController extends Controller
         $bill->note = $req->note;
         $bill->save();
 
-        foreach($cart['items'] as $key=>$value ){
+        foreach($cart->items as $key=>$value ){
             $billDetail = new BillDetail;
             $billDetail->id_bill = $bill->id;
             $billDetail->id_product = $key;
