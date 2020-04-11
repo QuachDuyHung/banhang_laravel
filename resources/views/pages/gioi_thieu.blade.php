@@ -210,7 +210,7 @@
             <div class="col-sm-6 wow fadeInLeft">
                 <div class="beta-person media">
                 
-                    <img class="pull-left" src="resource/assets/dest/images/person2.jpg" alt="">
+                    <img class="pull-left" src="resource/assets/dest/images/person1.jpg" alt="">
                 
                     <div class="media-body beta-person-body">
                         <h5>Bob Robertson</h5>
@@ -223,7 +223,7 @@
             <div class="col-sm-6 wow fadeInRight">
                 <div class="beta-person media ">
                 
-                    <img class="pull-left" src="resource/assets/dest/images/person3.jpg" alt="">
+                    <img class="pull-left" src="resource/assets/dest/images/person1.jpg" alt="">
                 
                     <div class="media-body beta-person-body">
                         <h5>Mike Greenwood</h5>
@@ -256,7 +256,7 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                 <div class="bets-img-hover">
-                    <img src="resource/assets/dest/images/person2.jpg" alt="">
+                    <img src="resource/assets/dest/images/person1.jpg" alt="">
                 </div>
                     <div class="beta-person-body">
                         <h5>Bob Robertson</h5>
@@ -269,7 +269,7 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                 <div class="bets-img-hover">
-                    <img src="resource/assets/dest/images/person3.jpg" alt="">
+                    <img src="resource/assets/dest/images/person1.jpg" alt="">
                 </div>
                     <div class="beta-person-body">
                         <h5>Mike Greenwood</h5>
@@ -282,7 +282,7 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                 <div class="bets-img-hover">	
-                    <img src="resource/assets/dest/images/person4.jpg" alt="">
+                    <img src="resource/assets/dest/images/person1.jpg" alt="">
                 </div>
                     <div class="beta-person-body">
                         <h5>David Black</h5>
